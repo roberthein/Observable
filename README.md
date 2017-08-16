@@ -19,7 +19,7 @@ var position = Observable(CGPoint.zero)
 
 ```swift
 position.addObserver(self) { newPosition in
-	// handle new position
+    // handle new position
 }
 ```
 
@@ -44,6 +44,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'Observable'
+```
 
 ## Suggestions or feedback?
 
