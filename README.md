@@ -1,29 +1,50 @@
-# Observable
+<p align="center">
+    <img src="art/header.png" width="890" alt="Observable"/>
+</p>
 
-[![CI Status](http://img.shields.io/travis/roberthein/Observable.svg?style=flat)](https://travis-ci.org/roberthein/Observable)
-[![Version](https://img.shields.io/cocoapods/v/Observable.svg?style=flat)](http://cocoapods.org/pods/Observable)
-[![License](https://img.shields.io/cocoapods/l/Observable.svg?style=flat)](http://cocoapods.org/pods/Observable)
-[![Platform](https://img.shields.io/cocoapods/p/Observable.svg?style=flat)](http://cocoapods.org/pods/Observable)
+**tl;dr** *Create observable, add observer and observe...*
 
-## Example
+**Observable** is a reactive library before it becomes complicated (or interesting)
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## How to
+
+### Create an Observable
+
+```swift
+var position = Observable(CGPoint.zero)
+```
+
+### Start observing
+
+```swift
+position.addObserver(self) { newPosition in
+	// handle new position
+}
+```
+
+### Change the value
+
+```swift
+position.value = newPosition
+```
+
+### Stop observing
+
+```swift
+position.removeObserver(self)
+```
 
 ## Installation
 
-Observable is available through [CocoaPods](http://cocoapods.org). To install
+### CocoaPods
+
+**Observable** is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Observable"
-```
+pod 'Observable'
 
-## Author
+## Suggestions or feedback?
 
-roberthein, rh.hooijmans@gmail.com
-
-## License
-
-Observable is available under the MIT license. See the LICENSE file for more info.
+Feel free to create a pull request, open an issue or find me [on Twitter](https://twitter.com/roberthein).

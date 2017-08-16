@@ -1,0 +1,16 @@
+PODS:
+  - Observable (0.1.0)
+
+DEPENDENCIES:
+  - Observable (from `../`)
+
+EXTERNAL SOURCES:
+  Observable:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Observable: 550f0025bdc16a46f576260b074cdeeb99205099
+
+PODFILE CHECKSUM: 824ff6deebaeaa4820a34fd7f27b31dca20fcec4
+
+COCOAPODS: 1.2.1
