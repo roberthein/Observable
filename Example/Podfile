@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Observable_Example' do
+  pod 'Observable', :path => '../'
+
+  target 'Observable_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
