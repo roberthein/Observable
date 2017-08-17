@@ -4,7 +4,7 @@
 
 **tl;dr** *Create observable, add observer and observe...*
 
-**Observable** is a reactive library before it becomes complicated (or interesting)
+**Observable** is the easiest way to observe values in Swift.
 
 
 ## How to
