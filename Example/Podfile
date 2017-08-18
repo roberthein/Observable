@@ -1,5 +1,7 @@
 use_frameworks!
 
+platform :ios, '9.0'
+
 target 'Observable_Example' do
   pod 'Observable', :path => '../'
 end
