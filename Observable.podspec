@@ -2,7 +2,6 @@ Pod::Spec.new do |s|
   s.name         = 'Observable'
   s.version      = '1.0.1'
   s.ios.deployment_target = '8.0'
-  s.tvos.deployment_target = '8.0'
   s.summary      = 'Create observable, add observer and observe...'
   s.description  = <<-DESC
     Observable is a reactive library before it becomes complicated (or interesting)
