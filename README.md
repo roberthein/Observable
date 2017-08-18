@@ -2,8 +2,6 @@
     <img src="art/header.png" width="890" alt="Observable"/>
 </p>
 
-**tl;dr** *Create observable, add observer and observe...*
-
 **Observable** is the easiest way to observe values in Swift.
 
 
@@ -48,4 +46,4 @@ pod 'Observable'
 
 ## Suggestions or feedback?
 
-Feel free to create a pull request, open an issue or find me [on Twitter](https://twitter.com/roberthein).
+Feel free to create a pull request, open an issue or find [me on Twitter](https://twitter.com/roberthein).
