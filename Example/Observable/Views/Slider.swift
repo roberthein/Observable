@@ -4,7 +4,7 @@ import Observable
 
 class Slider: UISlider {
     
-    var offset = Observable(Float(0))
+    var position = Observable(CGFloat(0))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -12,6 +12,7 @@ class Slider: UISlider {
         translatesAutoresizingMaskIntoConstraints = false
         minimumValue = 0
         maximumValue = 100
+        tintColor = UIColor(red: 95/255, green: 20/255, blue: 255/255, alpha: 1)
         addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
     }
     
@@ -20,6 +21,6 @@ class Slider: UISlider {
     }
     
     func sliderValueChanged(_ slider: UISlider) {
-        offset.value = slider.value
+        position.value = CGFloat(value / maximumValue)
     }
 }
