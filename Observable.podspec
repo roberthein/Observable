@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = 'Observable'
-  s.version      = '1.0.1'
+  s.version      = '1.1.0'
   s.ios.deployment_target = '8.0'
-  s.summary      = 'Create observable, add observer and observe...'
+  s.summary      = 'The easiest way to observe values in Swift'
   s.description  = <<-DESC
-    Observable is a reactive library before it becomes complicated (or interesting)
+    Observable is the easiest way to observe values in Swift
   DESC
   s.homepage           = 'https://github.com/roberthein/Observable'
   s.license            = { :type => 'MIT', :file => 'LICENSE' }
