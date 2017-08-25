@@ -4,7 +4,7 @@ import Observable
 
 class CollectionView: UICollectionView {
     
-    var offset = Observable(CGPoint.zero)
+    var scrollPercentage = Observable(Float(0))
     
     convenience init() {
         let size = (UIScreen.main.bounds.width / 2) - 30
@@ -31,7 +31,7 @@ class CollectionView: UICollectionView {
 extension CollectionView: UICollectionViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        offset.value = scrollView.contentOffset
+        scrollPercentage.value = Float((scrollView.contentOffset.x / frame.width) / ((contentSize.width - frame.width) / frame.width))
     }
 }
 
@@ -39,9 +39,7 @@ extension CollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellReuseIdentifier", for: indexPath)
-        cell.backgroundColor = .gray
-        cell.layer.cornerRadius = 10
-        cell.clipsToBounds = false
+        cell.backgroundColor = UIColor(red: 95/255, green: 20/255, blue: 255/255, alpha: 1)
         
         return cell
     }
