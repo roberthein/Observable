@@ -1,31 +1,36 @@
 import Foundation
 
-public struct Observable<T> {
-    
+public final class Observable<T> {
+
     public typealias Observer = (T) -> Void
-    private var observers: [(Observer, AnyObject)] = []
-    
+
+    private var observers: [Int: Observer] = [:]
+    private var uniqueID = (0...Int.max).makeIterator()
+
     public var value: T {
         didSet {
-            observers.forEach { $0.0(value) }
+            observers.values.forEach { $0(value) }
         }
     }
-    
+
     public init(_ value: T) {
         self.value = value
     }
-    
-    public mutating func addObserver(_ object: AnyObject, _ observer: @escaping Observer) {
-        removeObserver(object)
-        observers.append((observer, object))
-        observers.forEach { $0.0(value) }
+
+    public func addObserver(_ observer: @escaping Observer) -> Disposable {
+        guard let id = uniqueID.next() else { fatalError("There should always be a next unique id") }
+
+        observers[id] = observer
+        observer(value)
+
+        let disposable = Disposable {
+            self.observers[id] = nil
+        }
+
+        return disposable
     }
-    
-    public mutating func removeObserver(_ object: AnyObject) {
-        observers = observers.filter { $0.1 !== object }
-    }
-    
-    public mutating func removeAllObservers() {
+
+    public func removeAllObservers() {
         observers.removeAll()
     }
 }
