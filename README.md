@@ -11,16 +11,22 @@
 
 ## How to
 
-### Create an Observable
+### Create an Observable 
 
 ```swift
 var position = Observable(CGPoint.zero)
 ```
 
+### Define the Disposable
+
+```swift
+var disposable: Disposable?
+```
+
 ### Start observing
 
 ```swift
-position.addObserver(self) { newPosition in
+disposable = position.addObserver(self) { newPosition in
     // handle new position
 }
 ```
@@ -29,12 +35,6 @@ position.addObserver(self) { newPosition in
 
 ```swift
 position.value = newPosition
-```
-
-### Stop observing
-
-```swift
-position.removeObserver(self)
 ```
 
 ## Installation
