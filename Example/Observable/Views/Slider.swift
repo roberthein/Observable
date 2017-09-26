@@ -20,7 +20,7 @@ class Slider: UISlider {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func sliderValueChanged(_ slider: UISlider) {
+    @objc func sliderValueChanged(_ slider: UISlider) {
         position.value = CGFloat(value / maximumValue)
     }
 }

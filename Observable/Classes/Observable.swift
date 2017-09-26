@@ -5,7 +5,7 @@ public final class Observable<T> {
     public typealias Observer = (T) -> Void
 
     private var observers: [Int: Observer] = [:]
-    private var uniqueID = (0...Int.max).makeIterator()
+    private var uniqueID = (0...).makeIterator()
 
     public var value: T {
         didSet {
