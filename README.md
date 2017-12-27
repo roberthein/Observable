@@ -4,11 +4,6 @@
 
 **Observable** is the easiest way to observe values in Swift.
 
-![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/Observable.svg)](#cocoapods)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-
-
 ## How to
 
 ### Create an Observable 
@@ -17,16 +12,10 @@
 var position = Observable(CGPoint.zero)
 ```
 
-### Define the Disposable
+### Add an observer
 
 ```swift
-var disposable: Disposable?
-```
-
-### Start observing
-
-```swift
-disposable = position.observe { newPosition in
+position.observe { p in
     // handle new position
 }
 ```
@@ -34,7 +23,7 @@ disposable = position.observe { newPosition in
 ### Change the value
 
 ```swift
-position.value = newPosition
+position.value = p
 ```
 
 ## Memory management
@@ -42,7 +31,7 @@ position.value = newPosition
 For a single observer you can store the returned `Disposable` to a variable
 
 ```swift
-disposable = position.observe { newPosition in
+disposable = position.observe { p in
 
 ```
 
@@ -72,7 +61,3 @@ pod 'Observable'
 ## Suggestions or feedback?
 
 Feel free to create a pull request, open an issue or find [me on Twitter](https://twitter.com/roberthein).
-
-## License
-
-Observable is released under the MIT license. [See LICENSE](https://github.com/roberthein/Observable/blob/master/LICENSE) for details.
