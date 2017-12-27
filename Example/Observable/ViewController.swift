@@ -27,12 +27,12 @@ class ViewController: UIViewController {
             slider.heightAnchor.constraint(equalToConstant: 100)
             ])
 
-        collectionView.scrollPercentage.observe { [weak self] percentage in
+        collectionView.scrollPercentage.observe { [weak self] percentage, oldValue in
             guard let slider = self?.slider else { return }
             slider.value = percentage * slider.maximumValue
         }.add(to: &disposal)
 
-        slider.position.observe { [weak self] position in
+        slider.position.observe { [weak self] position, oldValue in
             guard let collectionView = self?.collectionView else { return }
             collectionView.contentOffset.x = position * collectionView.contentSize.width - (collectionView.frame.width * position)
         }.add(to: &disposal)
