@@ -1,5 +1,7 @@
 import Foundation
 
+public typealias Disposal = [Disposable]
+
 public final class Disposable {
     
     private let dispose: () -> ()
@@ -10,5 +12,9 @@ public final class Disposable {
     
     deinit {
         dispose()
+    }
+    
+    public func add(to disposal: inout Disposal) {
+        disposal.append(self)
     }
 }
