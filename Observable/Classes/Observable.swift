@@ -2,14 +2,14 @@ import Foundation
 
 public final class Observable<T> {
 
-    public typealias Observer = (T) -> Void
+    public typealias Observer = (T, T?) -> Void
 
     private var observers: [Int: Observer] = [:]
     private var uniqueID = (0...).makeIterator()
 
     public var value: T {
         didSet {
-            observers.values.forEach { $0(value) }
+            observers.values.forEach { $0(value, oldValue) }
         }
     }
 
@@ -21,7 +21,7 @@ public final class Observable<T> {
         guard let id = uniqueID.next() else { fatalError("There should always be a next unique id") }
 
         observers[id] = observer
-        observer(value)
+        observer(value, nil)
 
         let disposable = Disposable {
             self.observers[id] = nil
