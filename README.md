@@ -37,6 +37,27 @@ disposable = position.observe { [weak self] newPosition in
 position.value = newPosition
 ```
 
+## Memory management
+
+For a single observer you can store the returned `Disposable` to a variable
+
+```swift
+disposable = position.observe { newPosition in
+
+```
+
+For multiple observers you can add the disposable to a `Disposal` variable
+
+```swift
+position.observe { }.add(to: &disposal)
+```
+
+And always weakify `self` when referencing `self` inside your observer
+
+```swift
+position.observe { [weak self] position in
+```
+
 ## Installation
 
 ### CocoaPods
