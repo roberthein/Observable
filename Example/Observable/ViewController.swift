@@ -6,8 +6,7 @@ class ViewController: UIViewController {
     private lazy var collectionView = CollectionView()
     private lazy var slider = Slider(frame: .zero)
 
-    private var collectionDisposable: Disposable?
-    private var sliderDisposable: Disposable?
+    private var disposal = Disposal()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +27,14 @@ class ViewController: UIViewController {
             slider.heightAnchor.constraint(equalToConstant: 100)
             ])
 
-        collectionDisposable = collectionView.scrollPercentage.observe { [weak self] percentage in
+        collectionView.scrollPercentage.observe { [weak self] percentage in
             guard let slider = self?.slider else { return }
             slider.value = percentage * slider.maximumValue
-        }
+        }.add(to: &disposal)
 
-        sliderDisposable = slider.position.observe { [weak self] position in
+        slider.position.observe { [weak self] position in
             guard let collectionView = self?.collectionView else { return }
             collectionView.contentOffset.x = position * collectionView.contentSize.width - (collectionView.frame.width * position)
-        }
+        }.add(to: &disposal)
     }
 }
