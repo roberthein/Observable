@@ -26,7 +26,7 @@ var disposable: Disposable?
 ### Start observing
 
 ```swift
-disposable = position.observe { [weak self] newPosition in
+disposable = position.observe { newPosition in
     // handle new position
 }
 ```
