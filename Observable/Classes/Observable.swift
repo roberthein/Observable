@@ -23,8 +23,8 @@ public final class Observable<T> {
         observers[id] = observer
         observer(value, nil)
 
-        let disposable = Disposable {
-            self.observers[id] = nil
+        let disposable = Disposable { [weak self] in
+            self?.observers[id] = nil
         }
 
         return disposable

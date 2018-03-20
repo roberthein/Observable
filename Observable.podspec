@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Observable'
-  s.version      = '1.3.2'
+  s.version      = '1.3.3'
   s.ios.deployment_target = '8.0'
   s.summary      = 'The easiest way to observe values in Swift'
   s.description  = <<-DESC
