@@ -58,6 +58,15 @@ it, simply add the following line to your Podfile:
 pod 'Observable'
 ```
 
+### Carthage
+
+**Observable** is available through [Carthage](https://github.com/Carthage/Carthage). To install
+it, simply add the following line to your Cartfile:
+
+```ruby
+github "roberthein/Observable" "master"
+```
+
 ## Suggestions or feedback?
 
 Feel free to create a pull request, open an issue or find [me on Twitter](https://twitter.com/roberthein).
