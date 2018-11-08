@@ -18,7 +18,6 @@ public final class Observable<T> {
                 } else {
                     observer(value, oldValue)
                 }
-                
             }
         }
     }
@@ -27,10 +26,10 @@ public final class Observable<T> {
         self.value = value
     }
 
-    public func observe(_ dispatchQueue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
+    public func observe(_ queue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
         let id = uniqueID.next()!
 
-        observers[id] = (observer, dispatchQueue)
+        observers[id] = (observer, queue)
         observer(value, nil)
 
         let disposable = Disposable { [weak self] in
