@@ -20,6 +20,14 @@ position.observe { p in
 }
 ```
 
+### Add an observer and specify the DispatchQueue
+
+```swift
+position.observe(DispatchQueue.main) { p in
+// handle new position
+}
+```
+
 ### Change the value
 
 ```swift
