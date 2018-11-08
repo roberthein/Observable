@@ -15,10 +15,10 @@ public class ImmutableObservable<T> {
                 
                 if let dispatchQueue = dispatchQueue {
                     dispatchQueue.async {
-                        observer(self._value, oldValue)
+                        observer(self.value, oldValue)
                     }
                 } else {
-                    observer(_value, oldValue)
+                    observer(value, oldValue)
                 }
             }
         }
