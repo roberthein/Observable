@@ -12,6 +12,15 @@
 var position = Observable(CGPoint.zero)
 ```
 
+### Create Observer and ImmutableObserver 
+
+```swift
+var position = Observable(CGPoint.zero)
+var immutablePosition: ImmutableObservable<CGPoint> = position 
+// With an ImmutableObservable the value can't be changed, only read or observe it's value changes
+}
+```
+
 ### Add an observer
 
 ```swift

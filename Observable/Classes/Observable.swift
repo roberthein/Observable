@@ -1,13 +1,13 @@
 import Foundation
 
-public final class Observable<T> {
+public class ImmutableObservable<T> {
 
     public typealias Observer = (T, T?) -> Void
 
     private var observers: [Int: (Observer, DispatchQueue?)] = [:]
     private var uniqueID = (0...).makeIterator()
 
-    public var value: T {
+    fileprivate var _value: T {
         didSet {
             observers.values.forEach { observer, dispatchQueue in
                 
@@ -22,8 +22,12 @@ public final class Observable<T> {
         }
     }
 
+    public var value: T {
+        return _value
+    }
+
     public init(_ value: T) {
-        self.value = value
+        self._value = value
     }
 
     public func observe(_ queue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
@@ -42,4 +46,17 @@ public final class Observable<T> {
     public func removeAllObservers() {
         observers.removeAll()
     }
+}
+
+public class Observable<T>: ImmutableObservable<T> {
+
+    public override var value: T {
+        get {
+            return _value
+        }
+        set {
+            _value = newValue
+        }
+    }
+
 }
