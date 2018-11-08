@@ -18,7 +18,7 @@ public final class Observable<T> {
     }
 
     public func observe(_ observer: @escaping Observer) -> Disposable {
-        guard let id = uniqueID.next() else { fatalError("There should always be a next unique id") }
+        let id = uniqueID.next()!
 
         observers[id] = observer
         observer(value, nil)
