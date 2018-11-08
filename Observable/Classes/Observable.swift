@@ -7,23 +7,28 @@ public class ImmutableObservable<T> {
     private var observers: [Int: (Observer, DispatchQueue?)] = [:]
     private var uniqueID = (0...).makeIterator()
 
+    fileprivate let lock: Lock = Mutex()
+
     fileprivate var _value: T {
         didSet {
             observers.values.forEach { observer, dispatchQueue in
                 
                 if let dispatchQueue = dispatchQueue {
                     dispatchQueue.async {
-                        observer(self.value, oldValue)
+                        observer(self._value, oldValue)
                     }
                 } else {
-                    observer(value, oldValue)
+                    observer(_value, oldValue)
                 }
             }
         }
     }
 
     public var value: T {
-        return _value
+        lock.lock()
+        let result = _value
+        lock.unlock()
+        return result
     }
 
     public init(_ value: T) {
@@ -52,11 +57,15 @@ public class Observable<T>: ImmutableObservable<T> {
 
     public override var value: T {
         get {
-            return _value
+            lock.lock()
+            let result = _value
+            lock.unlock()
+            return result
         }
         set {
+            lock.lock()
             _value = newValue
+            lock.unlock()
         }
     }
-
 }
