@@ -26,9 +26,8 @@ public class ImmutableObservable<T> {
 
     public var value: T {
         lock.lock()
-        let result = _value
-        lock.unlock()
-        return result
+        defer { lock.unlock() }
+        return _value
     }
 
     public init(_ value: T) {
@@ -58,14 +57,13 @@ public class Observable<T>: ImmutableObservable<T> {
     public override var value: T {
         get {
             lock.lock()
-            let result = _value
-            lock.unlock()
-            return result
+            defer { lock.unlock() }
+            return _value
         }
         set {
             lock.lock()
+            defer { lock.unlock() }
             _value = newValue
-            lock.unlock()
         }
     }
 }
