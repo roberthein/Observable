@@ -4,12 +4,12 @@ import Foundation
 // http://www.vadimbulavin.com/atomic-properties/
 // https://stackoverflow.com/a/47345863/976628
 
-protocol Lock {
+internal protocol Lock {
     func lock()
     func unlock()
 }
 
-final class Mutex: Lock {
+internal final class Mutex: Lock {
     private var mutex: pthread_mutex_t = {
         var mutex = pthread_mutex_t()
         pthread_mutex_init(&mutex, nil)
