@@ -25,8 +25,6 @@ public class ImmutableObservable<T> {
     }
 
     public var value: T {
-        lock.lock()
-        defer { lock.unlock() }
         return _value
     }
 
@@ -56,8 +54,6 @@ public class Observable<T>: ImmutableObservable<T> {
 
     public override var value: T {
         get {
-            lock.lock()
-            defer { lock.unlock() }
             return _value
         }
         set {
