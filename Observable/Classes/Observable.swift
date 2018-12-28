@@ -46,7 +46,7 @@ public class ImmutableObservable<T> {
 
         let disposable = Disposable { [weak self] in
             self?.observers[id] = nil
-            self?.onDispose()
+            self?._onDispose()
         }
 
         return disposable
