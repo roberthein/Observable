@@ -20,6 +20,17 @@ var immutablePosition: ImmutableObservable<CGPoint> = position
 // With an ImmutableObservable the value can't be changed, only read or observe it's value changes
 ```
 
+### Create Observer with custom onDispose functionality
+
+In some cases Observables require resources while they're active that must be cleaned up when they're disposed of.  To handle such cases you can pass an optional block to the Observable initializer to be executed when the Observable is disposed of.
+
+```swift
+url.startAccessingSecurityScopedResource()
+let observable = Observable([URL]()) {
+    url.stopAccessingSecurityScopedResource()
+}
+```
+
 ### Add an observer
 
 ```swift
