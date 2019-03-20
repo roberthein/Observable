@@ -7,7 +7,8 @@ public class ImmutableObservable<T> {
     private var observers: [Int: (Observer, DispatchQueue?)] = [:]
     private var uniqueID = (0...).makeIterator()
 
-    fileprivate let lock: Lock = Mutex()
+    // fileprivate let lock: Lock = Mutex()
+    fileprivate let syncQueue: DispatchQueue = DispatchQueue(label: "Observable")
 
     fileprivate var _value: T {
         didSet {
@@ -33,18 +34,19 @@ public class ImmutableObservable<T> {
     }
 
     public func observe(_ queue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
-        lock.lock()
-        defer { lock.unlock() }
+        var disposable: Disposable!
         
-        let id = uniqueID.next()!
-
-        observers[id] = (observer, queue)
-        observer(value, nil)
-
-        let disposable = Disposable { [weak self] in
-            self?.observers[id] = nil
+        syncQueue.sync {
+            let id = uniqueID.next()!
+            
+            observers[id] = (observer, queue)
+            observer(value, nil)
+            
+            disposable = Disposable { [weak self] in
+                self?.observers[id] = nil
+            }
         }
-
+        
         return disposable
     }
 
@@ -60,9 +62,9 @@ public class Observable<T>: ImmutableObservable<T> {
             return _value
         }
         set {
-            lock.lock()
-            defer { lock.unlock() }
-            _value = newValue
+            syncQueue.async { [unowned self] in
+                self._value = newValue
+            }
         }
     }
 }
