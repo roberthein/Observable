@@ -12,12 +12,19 @@
 var position = Observable(CGPoint.zero)
 ```
 
-### Create Observer and ImmutableObserver 
+### Create an ImmutableObservable 
+Using `ImmutableObservable` we can create an "readonly"-Observable, in order to avoid side-effects on our internal API. 
 
 ```swift
-var position = Observable(CGPoint.zero)
-var immutablePosition: ImmutableObservable<CGPoint> = position 
-// With an ImmutableObservable the value can't be changed, only read or observe it's value changes
+class SomeViewModel {
+    /// Public property, that can be read / observed by external classes (e.g. view controller), but not changed.
+    var position: ImmutableObservable<CGPoint> = {
+        return positionSubject
+    }
+
+    /// Private property, that can be changed / observed inside this view model.
+    private let positionSubject = Observable(CGPoint.zero)
+}
 ```
 
 ### Add an observer
