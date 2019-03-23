@@ -7,25 +7,29 @@ public class ImmutableObservable<T> {
     private var observers: [Int: (Observer, DispatchQueue?)] = [:]
     private var uniqueID = (0...).makeIterator()
 
-    fileprivate let lock: Lock = Mutex()
+    fileprivate let readWriteQueue: DispatchQueue = DispatchQueue(label: "Observable.ReadWriteQueue")
+    fileprivate let observersQueue: DispatchQueue = DispatchQueue(label: "Observable.ObserversQueue")
 
     fileprivate var _value: T {
         didSet {
-            observers.values.forEach { observer, dispatchQueue in
-                
-                if let dispatchQueue = dispatchQueue {
-                    dispatchQueue.async {
+            observersQueue.async {
+                self.observers.values.forEach { observer, dispatchQueue in
+                    if let dispatchQueue = dispatchQueue {
+                        dispatchQueue.async {
+                            observer(self.value, oldValue)
+                        }
+                    } else {
                         observer(self.value, oldValue)
                     }
-                } else {
-                    observer(value, oldValue)
                 }
             }
         }
     }
 
     public var value: T {
-        return _value
+        return readWriteQueue.sync {
+            return _value
+        }
     }
 
     public init(_ value: T) {
@@ -33,18 +37,15 @@ public class ImmutableObservable<T> {
     }
 
     public func observe(_ queue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
-        lock.lock()
-        defer { lock.unlock() }
-        
         let id = uniqueID.next()!
-
+        
         observers[id] = (observer, queue)
         observer(value, nil)
-
+        
         let disposable = Disposable { [weak self] in
             self?.observers[id] = nil
         }
-
+        
         return disposable
     }
 
@@ -57,12 +58,14 @@ public class Observable<T>: ImmutableObservable<T> {
 
     public override var value: T {
         get {
-            return _value
+            return readWriteQueue.sync {
+                return _value
+            }
         }
         set {
-            lock.lock()
-            defer { lock.unlock() }
-            _value = newValue
+            readWriteQueue.async {
+                self._value = newValue
+            }
         }
     }
 }
