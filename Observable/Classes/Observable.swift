@@ -1,6 +1,6 @@
 import Foundation
 
-public class ImmutableObservable<T>: Subject<T> {
+public class ImmutableObservable<T>: BaseObservable<T> {
     
     public var value: T {
         lock.lock()
