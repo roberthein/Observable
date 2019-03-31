@@ -21,6 +21,8 @@ class SomeViewModel {
     var position: ImmutableObservable<CGPoint> = {
         return positionSubject
     }
+    // Or use the helper method Observable.asImmutable()
+    // lazy var position = positionSubject.asImmutable()
 
     /// Private property, that can be changed / observed inside this view model.
     private let positionSubject = Observable(CGPoint.zero)
