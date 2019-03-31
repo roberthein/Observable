@@ -130,7 +130,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 29X3GG489T;
+						DevelopmentTeam = 3TAZ984YN3;
 						LastSwiftMigration = 1020;
 					};
 				};
@@ -300,12 +300,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 29X3GG489T;
+				DEVELOPMENT_TEAM = 3TAZ984YN3;
 				INFOPLIST_FILE = Observable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.observable.demo;
 				PRODUCT_NAME = Observable.;
 				SWIFT_VERSION = 5.0;
 			};
@@ -315,12 +315,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 29X3GG489T;
+				DEVELOPMENT_TEAM = 3TAZ984YN3;
 				INFOPLIST_FILE = Observable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.observable.demo;
 				PRODUCT_NAME = Observable.;
 				SWIFT_VERSION = 5.0;
 			};
