@@ -22,13 +22,16 @@ public class ImmutableObservable<T> {
             }
         }
     }
-    
+  
     public var value: T {
         return _value
     }
+      
+    fileprivate var _onDispose: () -> Void
     
-    public init(_ value: T) {
+    public init(_ value: T, onDispose: @escaping () -> Void = {}) {
         self._value = value
+        self._onDispose = onDispose
     }
     
     public func observe(_ queue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
@@ -42,6 +45,7 @@ public class ImmutableObservable<T> {
         
         let disposable = Disposable { [weak self] in
             self?.observers[id] = nil
+            self?._onDispose()
         }
         
         return disposable
