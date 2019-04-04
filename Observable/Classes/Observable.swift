@@ -11,13 +11,14 @@ public class ImmutableObservable<T> {
     
     fileprivate var _value: T {
         didSet {
+            let newValue = _value
             observers.values.forEach { observer, dispatchQueue in
                 if let dispatchQueue = dispatchQueue {
                     dispatchQueue.async {
-                        observer(self.value, oldValue)
+                        observer(newValue, oldValue)
                     }
                 } else {
-                    observer(value, oldValue)
+                    observer(newValue, oldValue)
                 }
             }
         }
