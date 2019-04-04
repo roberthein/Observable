@@ -55,6 +55,10 @@ public class ImmutableObservable<T> {
     public func removeAllObservers() {
         observers.removeAll()
     }
+    
+    public func asImmutable() -> ImmutableObservable<T> {
+        return self
+    }
 }
 
 public class Observable<T>: ImmutableObservable<T> {
