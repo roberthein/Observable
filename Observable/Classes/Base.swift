@@ -7,8 +7,8 @@ public class BaseObservable<T> {
     private var observers: [Int: (Observer, DispatchQueue?)] = [:]
     private var uniqueID = (0...).makeIterator()
     
-    let lock: Lock = Mutex()
-    var _value: T? {
+    internal let lock: Lock = Mutex()
+    internal var _value: T? {
         didSet {
             let val = _value!
             

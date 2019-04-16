@@ -31,4 +31,8 @@ public class Observable<T>: ImmutableObservable<T> {
             _value = newValue
         }
     }
+    
+    public func asImmutable() -> ImmutableObservable<T> {
+        return self
+    }
 }

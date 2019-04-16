@@ -21,9 +21,22 @@ class SomeViewModel {
     var position: ImmutableObservable<CGPoint> = {
         return positionSubject
     }
+    // Or use the helper method Observable.asImmutable()
+    // lazy var position = positionSubject.asImmutable()
 
     /// Private property, that can be changed / observed inside this view model.
     private let positionSubject = Observable(CGPoint.zero)
+}
+```
+
+### Create Observer with custom onDispose functionality
+
+In some cases Observables require resources while they're active that must be cleaned up when they're disposed of.  To handle such cases you can pass an optional block to the Observable initializer to be executed when the Observable is disposed of.
+
+```swift
+url.startAccessingSecurityScopedResource()
+let observable = Observable([URL]()) {
+    url.stopAccessingSecurityScopedResource()
 }
 ```
 
@@ -79,15 +92,6 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'Observable'
-```
-
-### Carthage
-
-**Observable** is available through [Carthage](https://github.com/Carthage/Carthage). To install
-it, simply add the following line to your Cartfile:
-
-```ruby
-github "roberthein/Observable" "master"
 ```
 
 ## Suggestions or feedback?
