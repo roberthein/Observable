@@ -1,6 +1,6 @@
 import Foundation
 
-public class ImmutableObservable<T>: BaseObservable<T> {
+open class ImmutableObservable<T>: BaseObservable<T> {
     
     public var value: T {
         lock.lock()
@@ -17,7 +17,7 @@ public class ImmutableObservable<T>: BaseObservable<T> {
     }
 }
 
-public class Observable<T>: ImmutableObservable<T> {
+open class Observable<T>: ImmutableObservable<T> {
 
     public override var value: T {
         get {

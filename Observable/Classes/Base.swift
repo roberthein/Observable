@@ -1,6 +1,6 @@
 import Foundation
 
-public class BaseObservable<T> {
+open class BaseObservable<T> {
     
     public typealias Observer = (T, T?) -> Void
     
