@@ -5,27 +5,20 @@
 **Observable** is the easiest way to observe values in Swift.
 
 ## How to
-
-### Create an Observable 
-
-```swift
-var position = Observable(CGPoint.zero)
-```
-
-### Create an ImmutableObservable 
-Using `ImmutableObservable` we can create an "readonly"-Observable, in order to avoid side-effects on our internal API. 
-
+### Create an Observable and MutableObservable 
+Using `MutableObservable` you can create and observe event.
+Using `Observable` you can observe event, in order to avoid side-effects on our internal API. 
 ```swift
 class SomeViewModel {
     /// Public property, that can be read / observed by external classes (e.g. view controller), but not changed.
-    var position: ImmutableObservable<CGPoint> = {
+    var position: Observable<CGPoint> = {
         return positionSubject
     }
-    // Or use the helper method Observable.asImmutable()
-    // lazy var position = positionSubject.asImmutable()
+    // Or use the helper method Observable.asObservable()
+    // lazy var position = positionSubject.asObservable()
 
     /// Private property, that can be changed / observed inside this view model.
-    private let positionSubject = Observable(CGPoint.zero)
+    private let positionSubject = MutableObservable(CGPoint.zero)
 }
 ```
 
