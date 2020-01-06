@@ -33,13 +33,13 @@ let observable = Observable([URL]()) {
 }
 ```
 
-### Model Properties as @Observable
+### Model Properties as @MutableObservable
 
 Now mark your binded/mapped properties as observable and export public observable
 
 ```swift
 //Private Observer
-@Observable var text: String = "Test"
+@MutableObservable var text: String = "Test"
 
 //add observer
 
