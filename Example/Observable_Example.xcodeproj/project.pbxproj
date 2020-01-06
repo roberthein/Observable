@@ -7,16 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DE1C7928F105830DE634D19 /* Pods_Observable_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8AEC54E073038B09468126 /* Pods_Observable_Tests.framework */; };
+		4A281C4A30BC0A6569858660 /* Pods_Observable_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FCCA03AF990B4CBF218E6B /* Pods_Observable_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		700909C523C37AE0009DC691 /* Observable_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700909C423C37AE0009DC691 /* Observable_Tests.swift */; };
 		A90454EC1F44978C00D88C96 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90454EB1F44978C00D88C96 /* CollectionView.swift */; };
 		A90454EE1F44992400D88C96 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90454ED1F44992400D88C96 /* Slider.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		700909C723C37AE0009DC691 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = Observable_Example;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		072A63DE882E2210FEB4F602 /* Pods-Observable.Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Observable.Tests.release.xcconfig"; path = "Target Support Files/Pods-Observable.Tests/Pods-Observable.Tests.release.xcconfig"; sourceTree = "<group>"; };
+		0A8AEC54E073038B09468126 /* Pods_Observable_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Observable_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FBFCAAB79B180937E68F75 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		16E61C8587F3F8D17B8336A3 /* Pods-Observable_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Observable_Example.release.xcconfig"; path = "Target Support Files/Pods-Observable_Example/Pods-Observable_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3E9A85AE9CD9CDAEDCFB1013 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4B80EA5D126C7A948CF8FD3C /* Observable.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Observable.podspec; path = ../Observable.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* Observable..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Observable..app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,8 +41,14 @@
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		700909C223C37AE0009DC691 /* Observable.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Observable.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		700909C423C37AE0009DC691 /* Observable_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable_Tests.swift; sourceTree = "<group>"; };
+		700909C623C37AE0009DC691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79FCCA03AF990B4CBF218E6B /* Pods_Observable_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Observable_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90454EB1F44978C00D88C96 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		A90454ED1F44992400D88C96 /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
+		C1F46F32751F8BA89FE71124 /* Pods-Observable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Observable_Example.debug.xcconfig"; path = "Target Support Files/Pods-Observable_Example/Pods-Observable_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F38D4C7BEEA9FD273286BB32 /* Pods-Observable.Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Observable.Tests.debug.xcconfig"; path = "Target Support Files/Pods-Observable.Tests/Pods-Observable.Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,15 +56,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A281C4A30BC0A6569858660 /* Pods_Observable_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		700909BF23C37AE0009DC691 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DE1C7928F105830DE634D19 /* Pods_Observable_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F9A7C2D7483A6785214E39B /* Pods */ = {
+		1E6F2567550A939AF9E84DC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79FCCA03AF990B4CBF218E6B /* Pods_Observable_Example.framework */,
+				0A8AEC54E073038B09468126 /* Pods_Observable_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5731359F1C3DFB89F1C48B3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1F46F32751F8BA89FE71124 /* Pods-Observable_Example.debug.xcconfig */,
+				16E61C8587F3F8D17B8336A3 /* Pods-Observable_Example.release.xcconfig */,
+				F38D4C7BEEA9FD273286BB32 /* Pods-Observable.Tests.debug.xcconfig */,
+				072A63DE882E2210FEB4F602 /* Pods-Observable.Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -52,8 +96,10 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Observable */,
+				700909C323C37AE0009DC691 /* Observable.Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				1F9A7C2D7483A6785214E39B /* Pods */,
+				5731359F1C3DFB89F1C48B3E /* Pods */,
+				1E6F2567550A939AF9E84DC4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* Observable..app */,
+				700909C223C37AE0009DC691 /* Observable.Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +144,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		700909C323C37AE0009DC691 /* Observable.Tests */ = {
+			isa = PBXGroup;
+			children = (
+				700909C423C37AE0009DC691 /* Observable_Tests.swift */,
+				700909C623C37AE0009DC691 /* Info.plist */,
+			);
+			path = Observable.Tests;
+			sourceTree = "<group>";
+		};
 		A90454EA1F44978200D88C96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Observable_Example" */;
 			buildPhases = (
+				7DB424D966D14630F63DC2DC /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
+				7E69F1393E3051EC886A3760 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,13 +184,33 @@
 			productReference = 607FACD01AFB9204008FA782 /* Observable..app */;
 			productType = "com.apple.product-type.application";
 		};
+		700909C123C37AE0009DC691 /* Observable.Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 700909CB23C37AE0009DC691 /* Build configuration list for PBXNativeTarget "Observable.Tests" */;
+			buildPhases = (
+				25B0C401321C5E60B3638EF3 /* [CP] Check Pods Manifest.lock */,
+				700909BE23C37AE0009DC691 /* Sources */,
+				700909BF23C37AE0009DC691 /* Frameworks */,
+				700909C023C37AE0009DC691 /* Resources */,
+				D319BB48AAA2AAB188CCFA6E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				700909C823C37AE0009DC691 /* PBXTargetDependency */,
+			);
+			name = Observable.Tests;
+			productName = Observable.Tests;
+			productReference = 700909C223C37AE0009DC691 /* Observable.Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -140,6 +218,11 @@
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = AP62F24ZLQ;
 						LastSwiftMigration = 1020;
+					};
+					700909C123C37AE0009DC691 = {
+						CreatedOnToolsVersion = 11.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
@@ -157,6 +240,7 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* Observable_Example */,
+				700909C123C37AE0009DC691 /* Observable.Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -171,7 +255,97 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		700909C023C37AE0009DC691 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25B0C401321C5E60B3638EF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Observable.Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DB424D966D14630F63DC2DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Observable_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E69F1393E3051EC886A3760 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Observable_Example/Pods-Observable_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Observable/Observable.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Observable.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Observable_Example/Pods-Observable_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D319BB48AAA2AAB188CCFA6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Observable.Tests/Pods-Observable.Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Observable/Observable.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Observable.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Observable.Tests/Pods-Observable.Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		607FACCC1AFB9204008FA782 /* Sources */ = {
@@ -185,7 +359,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		700909BE23C37AE0009DC691 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				700909C523C37AE0009DC691 /* Observable_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		700909C823C37AE0009DC691 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* Observable_Example */;
+			targetProxy = 700909C723C37AE0009DC691 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
@@ -306,6 +496,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1F46F32751F8BA89FE71124 /* Pods-Observable_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AP62F24ZLQ;
@@ -321,6 +512,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16E61C8587F3F8D17B8336A3 /* Pods-Observable_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AP62F24ZLQ;
@@ -331,6 +523,59 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.observable.demo;
 				PRODUCT_NAME = Observable.;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		700909C923C37AE0009DC691 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F38D4C7BEEA9FD273286BB32 /* Pods-Observable.Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Observable.Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.observable.demo.Observable-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Observable..app/Observable.";
+			};
+			name = Debug;
+		};
+		700909CA23C37AE0009DC691 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 072A63DE882E2210FEB4F602 /* Pods-Observable.Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Observable.Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.observable.demo.Observable-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Observable..app/Observable.";
 			};
 			name = Release;
 		};
@@ -351,6 +596,15 @@
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
 				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		700909CB23C37AE0009DC691 /* Build configuration list for PBXNativeTarget "Observable.Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				700909C923C37AE0009DC691 /* Debug */,
+				700909CA23C37AE0009DC691 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
