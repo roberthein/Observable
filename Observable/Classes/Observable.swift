@@ -1,6 +1,6 @@
 import Foundation
 
-open class Observable<T> {
+public class Observable<T> {
     
     public typealias Observer = (T, T?) -> Void
     
@@ -72,7 +72,7 @@ open class Observable<T> {
 }
 
 @propertyWrapper
-open class MutableObservable<T>: Observable<T> {
+public class MutableObservable<T>: Observable<T> {
     
     override public var wrappedValue: T {
         get {
