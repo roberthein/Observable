@@ -23,8 +23,8 @@ public class ImmutableObservable<T> {
             }
         }
     }
-  
-    public var value: T {
+    
+    public var wrappedValue: T {
         return _value
     }
       
@@ -35,6 +35,11 @@ public class ImmutableObservable<T> {
         self._onDispose = onDispose
     }
     
+    public init(wrappedValue: T) {
+        self._value = wrappedValue
+        self._onDispose = {}
+    }
+    
     public func observe(_ queue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
         lock.lock()
         defer { lock.unlock() }
@@ -42,7 +47,7 @@ public class ImmutableObservable<T> {
         let id = uniqueID.next()!
         
         observers[id] = (observer, queue)
-        observer(value, nil)
+        observer(wrappedValue, nil)
         
         let disposable = Disposable { [weak self] in
             self?.observers[id] = nil
@@ -60,10 +65,10 @@ public class ImmutableObservable<T> {
         return self
     }
 }
-
+@propertyWrapper
 public class Observable<T>: ImmutableObservable<T> {
     
-    public override var value: T {
+    override public var wrappedValue: T {
         get {
             return _value
         }
@@ -73,4 +78,6 @@ public class Observable<T>: ImmutableObservable<T> {
             _value = newValue
         }
     }
+    
 }
+
