@@ -4,7 +4,11 @@ import Observable
 
 class CollectionView: UICollectionView {
     
-    var scrollPercentage = Observable(Float(0))
+    @MutableObservable private var sPercentage:Float = 0
+    
+    var scrollPercentage:Observable<Float> {
+        return _sPercentage
+    }
     
     convenience init() {
         let size = (UIScreen.main.bounds.width / 2) - 30
@@ -31,7 +35,7 @@ class CollectionView: UICollectionView {
 extension CollectionView: UICollectionViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollPercentage.value = Float((scrollView.contentOffset.x / frame.width) / ((contentSize.width - frame.width) / frame.width))
+        sPercentage = Float((scrollView.contentOffset.x / frame.width) / ((contentSize.width - frame.width) / frame.width))
     }
 }
 

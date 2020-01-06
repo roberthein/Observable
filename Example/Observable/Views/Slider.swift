@@ -4,7 +4,11 @@ import Observable
 
 class Slider: UISlider {
     
-    var position = Observable(CGFloat(0))
+    @MutableObservable private var positionValue:CGFloat = 0
+    
+    var position:Observable<CGFloat> {
+        return _positionValue
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +25,6 @@ class Slider: UISlider {
     }
     
     @objc func sliderValueChanged(_ slider: UISlider) {
-        position.value = CGFloat(value / maximumValue)
+        positionValue = CGFloat(value / maximumValue)
     }
 }
