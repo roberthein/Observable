@@ -13,13 +13,7 @@ public class ImmutableObservable<T> {
         didSet {
             let newValue = _value
             observers.values.forEach { observer, dispatchQueue in
-                if let dispatchQueue = dispatchQueue {
-                    dispatchQueue.async {
-                        observer(newValue, oldValue)
-                    }
-                } else {
-                    observer(newValue, oldValue)
-                }
+                notify(observer: observer, dispatchQueue, oldValue: oldValue)
             }
         }
     }
@@ -42,7 +36,7 @@ public class ImmutableObservable<T> {
         let id = uniqueID.next()!
         
         observers[id] = (observer, queue)
-        observer(value, nil)
+        notify(observer: observer, queue, oldValue: nil)
         
         let disposable = Disposable { [weak self] in
             self?.observers[id] = nil
@@ -58,6 +52,16 @@ public class ImmutableObservable<T> {
     
     public func asImmutable() -> ImmutableObservable<T> {
         return self
+    }
+    
+    fileprivate func notify(observer: @escaping Observer, _ queue: DispatchQueue? = nil, oldValue: T?) {
+        if let queue = queue {
+            queue.async {
+                observer(self.value, oldValue)
+            }
+        } else {
+            observer(value, oldValue)
+        }
     }
 }
 
