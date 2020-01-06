@@ -1,6 +1,6 @@
 import Foundation
 
-public class ImmutableObservable<T> {
+public class Observable<T> {
     
     public typealias Observer = (T, T?) -> Void
     
@@ -61,12 +61,18 @@ public class ImmutableObservable<T> {
         observers.removeAll()
     }
     
-    public func asImmutable() -> ImmutableObservable<T> {
+    @available(*, deprecated, renamed: "asObservable")
+    public func asImmutable() -> Observable<T> {
+        return self
+    }
+    
+    public func asObservable() -> Observable<T> {
         return self
     }
 }
+
 @propertyWrapper
-public class Observable<T>: ImmutableObservable<T> {
+public class MutableObservable<T>: Observable<T> {
     
     override public var wrappedValue: T {
         get {

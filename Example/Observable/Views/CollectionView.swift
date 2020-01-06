@@ -4,8 +4,9 @@ import Observable
 
 class CollectionView: UICollectionView {
     
-    @Observable private var sPercentage:Float = 0
+    @MutableObservable private var sPercentage:Float = 0
     
+    var scrollPercentage: Observable<Float> {
     var scrollPercentage: ImmutableObservable<Float> {
         return _sPercentage
     }
