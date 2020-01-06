@@ -42,7 +42,7 @@ let observable = Observable([URL]()) {
 
 ### Model Properties as @Observable
 
-Now mark your binded/mapped properties as observable and export public obserable
+Now mark your binded/mapped properties as observable and export public observable
 
 ```swift
 //Private Observer
@@ -51,14 +51,14 @@ Now mark your binded/mapped properties as observable and export public obserable
 //add observer
 
 _text.observe { (newValue, oldValue) in
-            print(newValue)
-        }.add(to: &disposable)
+    print(newValue)
+}.add(to: &disposable)
         
 //Public Observer
 
-var textObserve:ImmutableObservable<String> {
-        return _text
-    }
+var textObserve: ImmutableObservable<String> {
+    return _text
+}
 
 ```
 ### Add an observer

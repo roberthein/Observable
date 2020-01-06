@@ -6,7 +6,7 @@ class CollectionView: UICollectionView {
     
     @Observable private var sPercentage:Float = 0
     
-    var scrollPercentage:ImmutableObservable<Float> {
+    var scrollPercentage: ImmutableObservable<Float> {
         return _sPercentage
     }
     
@@ -22,6 +22,7 @@ class CollectionView: UICollectionView {
         self.init(frame: .zero, collectionViewLayout: layout)
         
         register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CellReuseIdentifier")
+        
         translatesAutoresizingMaskIntoConstraints = false
         dataSource = self
         delegate = self
