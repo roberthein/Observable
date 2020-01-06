@@ -1,6 +1,6 @@
 import Foundation
 
-public class ImmutableObservable<T> {
+public class Observable<T> {
     
     public typealias Observer = (T, T?) -> Void
     
@@ -17,8 +17,8 @@ public class ImmutableObservable<T> {
             }
         }
     }
-  
-    public var value: T {
+    
+    public var wrappedValue: T {
         return _value
     }
       
@@ -29,6 +29,11 @@ public class ImmutableObservable<T> {
         self._onDispose = onDispose
     }
     
+    public init(wrappedValue: T) {
+        self._value = wrappedValue
+        self._onDispose = {}
+    }
+    
     public func observe(_ queue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
         lock.lock()
         defer { lock.unlock() }
@@ -36,7 +41,7 @@ public class ImmutableObservable<T> {
         let id = uniqueID.next()!
         
         observers[id] = (observer, queue)
-        notify(observer: observer, queue: queue, value: self.value)
+        notify(observer: observer, queue: queue, value: self.wrappedValue)
         
         let disposable = Disposable { [weak self] in
             self?.observers[id] = nil
@@ -50,7 +55,12 @@ public class ImmutableObservable<T> {
         observers.removeAll()
     }
     
-    public func asImmutable() -> ImmutableObservable<T> {
+    @available(*, deprecated, renamed: "asObservable")
+    public func asImmutable() -> Observable<T> {
+        return self
+    }
+    
+    public func asObservable() -> Observable<T> {
         return self
     }
     
@@ -65,9 +75,10 @@ public class ImmutableObservable<T> {
     }
 }
 
-public class Observable<T>: ImmutableObservable<T> {
+@propertyWrapper
+public class MutableObservable<T>: Observable<T> {
     
-    public override var value: T {
+    override public var wrappedValue: T {
         get {
             return _value
         }
@@ -77,4 +88,6 @@ public class Observable<T>: ImmutableObservable<T> {
             _value = newValue
         }
     }
+    
 }
+

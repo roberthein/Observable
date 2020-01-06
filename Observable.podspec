@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Observable'
-  s.version = '1.6.2'
+  s.version = '1.6.3'
   s.swift_versions = [5.0]
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.9'
