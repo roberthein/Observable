@@ -76,7 +76,7 @@ position.observe(DispatchQueue.main) { p in
 position.value = p
 ```
 
-### Stop observe for new values
+### Stop observing new values
 
 ```swift
 position.observe {
