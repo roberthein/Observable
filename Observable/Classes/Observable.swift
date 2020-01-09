@@ -1,5 +1,8 @@
 import Foundation
 
+@available(*, deprecated, renamed: "Observable", message: "`Observable` was renamed to `MutableObservable` and `ImmutableObservable` was renamed to `Observable`. An `Observable` can only read and observe changes on the `wrappedValue`. If you want to change the `wrappedValue` please use a `MutableObservable`instead.")
+public typealias ImmutableObservable = Observable
+
 public class Observable<T> {
     
     public typealias Observer = (T, T?) -> Void
@@ -25,7 +28,27 @@ public class Observable<T> {
     }
     
     public var wrappedValue: T {
-        return _value
+        get {
+            return _value
+        }
+        @available(*, deprecated, message: "The `wrappedValue` in the `Observable` class is read only. If you want and change the `wrappedValue` please use a `MutableObservable` instead.")
+        set {
+            lock.lock()
+            defer { lock.unlock() }
+            _value = newValue
+        }
+    }
+    
+    @available(*, deprecated, renamed: "wrappedValue")
+    public var value: T {
+        get {
+            return _value
+        }
+        set {
+            lock.lock()
+            defer { lock.unlock() }
+            _value = newValue
+        }
     }
       
     fileprivate var _onDispose: () -> Void
@@ -85,5 +108,16 @@ public class MutableObservable<T>: Observable<T> {
         }
     }
     
+    @available(*, deprecated, renamed: "wrappedValue")
+    override public var value: T {
+        get {
+            return _value
+        }
+        set {
+            lock.lock()
+            defer { lock.unlock() }
+            _value = newValue
+        }
+    }
 }
 

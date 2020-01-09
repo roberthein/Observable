@@ -73,7 +73,7 @@ position.observe(DispatchQueue.main) { p in
 ### Change the value
 
 ```swift
-position.value = p
+position.wrappedValue = p
 ```
 
 ## Memory management
