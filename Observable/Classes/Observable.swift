@@ -28,15 +28,7 @@ public class Observable<T> {
     }
     
     public var wrappedValue: T {
-        get {
-            return _value
-        }
-        @available(*, deprecated, message: "The `wrappedValue` in the `Observable` class is read only. If you want and change the `wrappedValue` please use a `MutableObservable` instead.")
-        set {
-            lock.lock()
-            defer { lock.unlock() }
-            _value = newValue
-        }
+        return _value
     }
     
     @available(*, deprecated, renamed: "wrappedValue")
@@ -44,6 +36,7 @@ public class Observable<T> {
         get {
             return _value
         }
+        @available(*, deprecated, message: "The `value` in the `Observable` class is read only. If you want and change the `value` please use a `MutableObservable` instead.")
         set {
             lock.lock()
             defer { lock.unlock() }
@@ -107,17 +100,4 @@ public class MutableObservable<T>: Observable<T> {
             _value = newValue
         }
     }
-    
-    @available(*, deprecated, renamed: "wrappedValue")
-    override public var value: T {
-        get {
-            return _value
-        }
-        set {
-            lock.lock()
-            defer { lock.unlock() }
-            _value = newValue
-        }
-    }
 }
-
