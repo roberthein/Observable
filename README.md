@@ -120,6 +120,15 @@ dependencies: [
 ]
 ```
 
+## Migrations
+
+### 1.x.y to 2.0.0
+- `Observable` is now `MutableObservable`
+- `ImmutableObservable` is now `Observable`
+- `Observable.asImmutableObservable()` is now `Observable.asObservable()`
+- `Observable.value` is now `Observable.wrappedValue`
+
+
 ## Suggestions or feedback?
 
 Feel free to create a pull request, open an issue or find [me on Twitter](https://twitter.com/roberthein).
