@@ -31,8 +31,8 @@ public class Observable<T> {
         return _value
     }
     
-    @available(*, deprecated, renamed: "wrappedValue")
     public var value: T {
+        @available(*, deprecated, renamed: "wrappedValue")
         get {
             return _value
         }
@@ -94,6 +94,19 @@ public class MutableObservable<T>: Observable<T> {
         get {
             return _value
         }
+        set {
+            lock.lock()
+            defer { lock.unlock() }
+            _value = newValue
+        }
+    }
+    
+    override public var value: T {
+        @available(*, deprecated, renamed: "wrappedValue")
+        get {
+            return _value
+        }
+        @available(*, deprecated, renamed: "wrappedValue")
         set {
             lock.lock()
             defer { lock.unlock() }
