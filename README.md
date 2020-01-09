@@ -108,6 +108,18 @@ it, simply add the following line to your Podfile:
 pod 'Observable'
 ```
 
+### Swift Package Manager
+
+**Observable** is available through `Swift Package Manager`.
+[Swift Package Manager](https://swift.org/package-manager/) (SwiftPM) is a tool for automating the distribution of Swift code. 
+It is integrated into the swift compiler and from Xcode 11, SwiftPM got natively integrated with Xcode.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/roberthein/Observable", from: "VERSION")
+]
+```
+
 ## Suggestions or feedback?
 
 Feel free to create a pull request, open an issue or find [me on Twitter](https://twitter.com/roberthein).
