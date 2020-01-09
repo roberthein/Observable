@@ -78,7 +78,7 @@ public class Observable<T> {
     }
     
     @available(*, deprecated, renamed: "asObservable")
-    public func asImmutable() -> Observable<T> {
+    public func asImmutable() -> ImmutableObservable<T> {
         return self
     }
     
