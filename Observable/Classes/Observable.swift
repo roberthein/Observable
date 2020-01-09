@@ -101,12 +101,11 @@ public class MutableObservable<T>: Observable<T> {
         }
     }
     
+    @available(*, deprecated, renamed: "wrappedValue")
     override public var value: T {
-        @available(*, deprecated, renamed: "wrappedValue")
         get {
             return _value
         }
-        @available(*, deprecated, renamed: "wrappedValue")
         set {
             lock.lock()
             defer { lock.unlock() }
