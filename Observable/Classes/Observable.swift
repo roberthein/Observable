@@ -13,13 +13,7 @@ public class Observable<T> {
         didSet {
             let newValue = _value
             observers.values.forEach { observer, dispatchQueue in
-                if let dispatchQueue = dispatchQueue {
-                    dispatchQueue.async {
-                        observer(newValue, oldValue)
-                    }
-                } else {
-                    observer(newValue, oldValue)
-                }
+                notify(observer: observer, queue: dispatchQueue, value: newValue, oldValue: oldValue)
             }
         }
     }
@@ -47,7 +41,7 @@ public class Observable<T> {
         let id = uniqueID.next()!
         
         observers[id] = (observer, queue)
-        observer(wrappedValue, nil)
+        notify(observer: observer, queue: queue, value: self.wrappedValue)
         
         let disposable = Disposable { [weak self] in
             self?.observers[id] = nil
@@ -68,6 +62,16 @@ public class Observable<T> {
     
     public func asObservable() -> Observable<T> {
         return self
+    }
+    
+    fileprivate func notify(observer: @escaping Observer, queue: DispatchQueue? = nil, value: T, oldValue: T? = nil) {
+        if let queue = queue {
+            queue.async {
+                observer(value, oldValue)
+            }
+        } else {
+            observer(value, oldValue)
+        }
     }
 }
 
