@@ -41,13 +41,13 @@ public class Observable<T> {
     fileprivate var _onDispose: () -> Void
     
     public init(_ value: T, onDispose: @escaping () -> Void = {}) {
-        self._value = value
-        self._onDispose = onDispose
+        _value = value
+        _onDispose = onDispose
     }
     
     public init(wrappedValue: T) {
-        self._value = wrappedValue
-        self._onDispose = {}
+        _value = wrappedValue
+        _onDispose = {}
     }
     
     public func observe(_ queue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
@@ -57,7 +57,7 @@ public class Observable<T> {
         let id = uniqueID.next()!
         
         observers[id] = (observer, queue)
-        notify(observer: observer, queue: queue, value: self.wrappedValue)
+        notify(observer: observer, queue: queue, value: wrappedValue)
         
         let disposable = Disposable { [weak self] in
             self?.observers[id] = nil
