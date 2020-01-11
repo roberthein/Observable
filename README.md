@@ -76,6 +76,16 @@ position.observe(DispatchQueue.main) { p in
 position.value = p
 ```
 
+### Stop observing new values
+
+```swift
+position.observe {
+    // This will stop all observers added to `disposal`
+    self.disposal.dispose()
+}.add(to: &disposal)
+
+```
+
 ## Memory management
 
 For a single observer you can store the returned `Disposable` to a variable

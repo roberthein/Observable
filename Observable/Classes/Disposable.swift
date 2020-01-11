@@ -2,9 +2,17 @@ import Foundation
 
 public typealias Disposal = [Disposable]
 
+extension Disposal {
+    public func dispose() {
+        forEach { disposable in
+            disposable.dispose()
+        }
+    }
+}
+
 public final class Disposable {
     
-    private let dispose: () -> ()
+    public let dispose: () -> ()
     
     init(_ dispose: @escaping () -> ()) {
         self.dispose = dispose
