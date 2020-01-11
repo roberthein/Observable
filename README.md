@@ -73,7 +73,7 @@ position.observe(DispatchQueue.main) { p in
 ### Change the value
 
 ```swift
-position.value = p
+position.wrappedValue = p
 ```
 
 ### Stop observing new values
@@ -117,6 +117,27 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'Observable'
 ```
+
+### Swift Package Manager
+
+**Observable** is available through `Swift Package Manager`.
+[Swift Package Manager](https://swift.org/package-manager/) (SwiftPM) is a tool for automating the distribution of Swift code. 
+It is integrated into the swift compiler and from Xcode 11, SwiftPM got natively integrated with Xcode.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/roberthein/Observable", from: "VERSION")
+]
+```
+
+## Migrations
+
+### 1.x.y to 2.0.0
+- `Observable` is now `MutableObservable`
+- `ImmutableObservable` is now `Observable`
+- `Observable.asImmutableObservable()` is now `Observable.asObservable()`
+- `Observable.value` is now `Observable.wrappedValue`
+
 
 ## Suggestions or feedback?
 
