@@ -203,6 +203,23 @@ class Observable_Tests: XCTestCase {
         XCTAssert(true)
     }
     
+    func test_whenDisposeDisposal_shouldCallOnDispose() {
+        let exp = expectation(description: "")
+        let observable = MutableObservable(0) {
+            exp.fulfill()
+        }
+
+        observable.observe { _, _ in
+        
+        }.add(to: &disposal)
+
+        observable.wrappedValue = 1
+        disposal.dispose()
+
+        wait(for: [exp], timeout: 1.0)
+        XCTAssert(true)
+    }
+    
     // MARK: - Using Singleton
     func test_whenUsingDispatchMain_shouldSucceed() {
         let exp = expectation(description: "")
