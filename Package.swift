@@ -8,6 +8,11 @@ let package = Package(
         .library(name: "Observable", targets: ["Observable"])
     ],
     targets: [
-        .target(name: "Observable", path: "Observable/Classes")
+        .target(name: "Observable", path: "Observable/Classes"),
+        .testTarget(
+            name: "ObservableTests",
+            dependencies: ["Observable"],
+            path: "Example/Observable.Tests"
+        ),
     ]
 )
