@@ -31,7 +31,7 @@ class Disposable_Tests: XCTestCase {
             exp.fulfill()
         }.add(to: &disposal)
         
-        self.disposal.dispose()
+        disposal.dispose()
         observable.wrappedValue = 1
         observable.wrappedValue = 2
         
@@ -50,7 +50,7 @@ class Disposable_Tests: XCTestCase {
             exp.fulfill()
         }.add(to: &disposal)
         
-        self.disposal.dispose()
+        disposal.dispose()
         observable.wrappedValue = 1
         observable.wrappedValue = 2
         
@@ -69,7 +69,7 @@ class Disposable_Tests: XCTestCase {
             exp.fulfill()
         }.add(to: &disposal)
         
-        self.disposal.dispose()
+        disposal.dispose()
         observable.wrappedValue = 1
         observable.wrappedValue = 2
         
@@ -90,7 +90,7 @@ class Disposable_Tests: XCTestCase {
         }.add(to: &disposal)
         
         observable.wrappedValue = 1
-        self.disposal.dispose()
+        disposal.dispose()
         observable.wrappedValue = 2
         
         wait(for: [exp], timeout: 1.0)
@@ -110,7 +110,7 @@ class Disposable_Tests: XCTestCase {
         }.add(to: &disposal)
         
         observable.wrappedValue = 1
-        self.disposal.dispose()
+        disposal.dispose()
         observable.wrappedValue = 2
         
         wait(for: [exp], timeout: 1.0)
@@ -130,7 +130,7 @@ class Disposable_Tests: XCTestCase {
         }.add(to: &disposal)
         
         observable.wrappedValue = 1
-        self.disposal.dispose()
+        disposal.dispose()
         observable.wrappedValue = 2
         
         wait(for: [exp], timeout: 1.0)
