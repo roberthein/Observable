@@ -5,7 +5,3 @@ platform :ios, '9.0'
 target 'Observable_Example' do
   pod 'Observable', :path => '../'
 end
-
-target 'Observable.Tests' do
-  pod 'Observable', :path => '../'
-end

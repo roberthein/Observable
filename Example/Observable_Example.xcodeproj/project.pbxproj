@@ -11,20 +11,9 @@
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		700909C523C37AE0009DC691 /* Observable_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700909C423C37AE0009DC691 /* Observable_Tests.swift */; };
 		A90454EC1F44978C00D88C96 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90454EB1F44978C00D88C96 /* CollectionView.swift */; };
 		A90454EE1F44992400D88C96 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90454ED1F44992400D88C96 /* Slider.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		700909C723C37AE0009DC691 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = Observable_Example;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		11FBFCAAB79B180937E68F75 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -36,22 +25,12 @@
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		700909C223C37AE0009DC691 /* Observable.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Observable.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		700909C423C37AE0009DC691 /* Observable_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable_Tests.swift; sourceTree = "<group>"; };
-		700909C623C37AE0009DC691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A90454EB1F44978C00D88C96 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		A90454ED1F44992400D88C96 /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		607FACCD1AFB9204008FA782 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		700909BF23C37AE0009DC691 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,7 +52,6 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Observable */,
-				700909C323C37AE0009DC691 /* Observable.Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				5731359F1C3DFB89F1C48B3E /* Pods */,
 			);
@@ -83,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* Observable..app */,
-				700909C223C37AE0009DC691 /* Observable.Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,15 +97,6 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		700909C323C37AE0009DC691 /* Observable.Tests */ = {
-			isa = PBXGroup;
-			children = (
-				700909C423C37AE0009DC691 /* Observable_Tests.swift */,
-				700909C623C37AE0009DC691 /* Info.plist */,
-			);
-			path = Observable.Tests;
-			sourceTree = "<group>";
-		};
 		A90454EA1F44978200D88C96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,24 +126,6 @@
 			productReference = 607FACD01AFB9204008FA782 /* Observable..app */;
 			productType = "com.apple.product-type.application";
 		};
-		700909C123C37AE0009DC691 /* Observable.Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 700909CB23C37AE0009DC691 /* Build configuration list for PBXNativeTarget "Observable.Tests" */;
-			buildPhases = (
-				700909BE23C37AE0009DC691 /* Sources */,
-				700909BF23C37AE0009DC691 /* Frameworks */,
-				700909C023C37AE0009DC691 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				700909C823C37AE0009DC691 /* PBXTargetDependency */,
-			);
-			name = Observable.Tests;
-			productName = Observable.Tests;
-			productReference = 700909C223C37AE0009DC691 /* Observable.Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,11 +140,6 @@
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = AP62F24ZLQ;
 						LastSwiftMigration = 1020;
-					};
-					700909C123C37AE0009DC691 = {
-						CreatedOnToolsVersion = 11.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
@@ -212,7 +157,6 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* Observable_Example */,
-				700909C123C37AE0009DC691 /* Observable.Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,13 +168,6 @@
 			files = (
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		700909C023C37AE0009DC691 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,23 +185,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		700909BE23C37AE0009DC691 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				700909C523C37AE0009DC691 /* Observable_Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		700909C823C37AE0009DC691 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* Observable_Example */;
-			targetProxy = 700909C723C37AE0009DC691 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
@@ -413,57 +334,6 @@
 			};
 			name = Release;
 		};
-		700909C923C37AE0009DC691 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Observable.Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.observable.demo.Observable-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Observable..app/Observable.";
-			};
-			name = Debug;
-		};
-		700909CA23C37AE0009DC691 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Observable.Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.observable.demo.Observable-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Observable..app/Observable.";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -481,15 +351,6 @@
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
 				607FACF11AFB9204008FA782 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		700909CB23C37AE0009DC691 /* Build configuration list for PBXNativeTarget "Observable.Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				700909C923C37AE0009DC691 /* Debug */,
-				700909CA23C37AE0009DC691 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
