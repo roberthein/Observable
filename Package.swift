@@ -12,7 +12,7 @@ let package = Package(
         .testTarget(
             name: "ObservableTests",
             dependencies: ["Observable"],
-            path: "Example/Observable.Tests"
+            path: "Observable/Tests"
         ),
     ]
 )
