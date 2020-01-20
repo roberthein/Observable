@@ -10,7 +10,7 @@ public class Observable<T> {
     private var observers: [Int: (Observer, DispatchQueue?)] = [:]
     private var uniqueID = (0...).makeIterator()
     
-    fileprivate let lock: Lock = Mutex()
+    fileprivate let lock: Lock = NSRecursiveLock()
     
     fileprivate var _value: T {
         didSet {
