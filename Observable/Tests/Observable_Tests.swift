@@ -220,6 +220,25 @@ class Observable_Tests: XCTestCase {
         XCTAssert(true)
     }
     
+    func test_whenUpdatingValueFromObserver_shouldNotDeadLock() {
+        let exp = expectation(description: "")
+        exp.expectedFulfillmentCount = 4
+        let observable = MutableObservable(0)
+        var lastValueResult: Int?
+        
+        observable.observe { newValue, _ in
+            lastValueResult = newValue
+            exp.fulfill()
+            if newValue < 3 {
+                observable.wrappedValue = newValue + 1
+            }
+        }.add(to: &disposal)
+        
+        wait(for: [exp], timeout: 1.0)
+        XCTAssertEqual(lastValueResult, 3)
+        XCTAssert(true)
+    }
+
     // MARK: - Using Singleton
     func test_whenUsingDispatchMain_shouldSucceed() {
         let exp = expectation(description: "")
