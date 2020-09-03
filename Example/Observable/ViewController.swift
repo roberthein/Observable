@@ -36,15 +36,14 @@ class ViewController: UIViewController {
         collectionView.scrollPercentage.observe { [weak self] percentage, oldValue in
             guard let slider = self?.slider else { return }
             slider.value = percentage * slider.maximumValue
+            slider.positionValue = CGFloat(percentage)
         }.add(to: &disposal)
 
         slider.position.observe { [weak self] position, oldValue in
             guard let collectionView = self?.collectionView else { return }
             collectionView.contentOffset.x = position * collectionView.contentSize.width - (collectionView.frame.width * position)
         }.add(to: &disposal)
-        
-        
-        slider.position.bind(to: self.sliderLabel, \.text, disposal: &self.disposal) { String(format: "Binded slider value: %.2f", $0) }
-        
+
+        slider.position.bind(to: sliderLabel, \.text, disposal: &disposal) { String(format: "Binded slider value: %.2f", $0) }
     }
 }

@@ -22,15 +22,15 @@ public extension Observable {
     /// }
     ///
     /// class ViewController {
-    ///     self.viewModel.username.bind(to: self.usernameLabel, \.text, disposal: &self.disposal)
+    ///     viewModel.username.bind(to: usernameLabel, \.text, disposal: &disposal)
     /// }
     ///
     /// ```
     ///
     func bind<O>(to object: O, _ objectKeyPath: ReferenceWritableKeyPath<O, T>, disposal: inout Disposal) {
-        self.observe { [weak self] (new, old) in
-            guard let strongSelf = self else { return }
-            object[keyPath: objectKeyPath] = strongSelf.wrappedValue
+        observe { [weak self] (new, old) in
+            guard let self = self else { return }
+            object[keyPath: objectKeyPath] = self.wrappedValue
         }.add(to: &disposal)
     }
     
@@ -49,15 +49,15 @@ public extension Observable {
     /// }
     ///
     /// class ViewController {
-    ///     self.viewModel.username.bind(to: self.usernameLabel, \.text, disposal: &self.disposal)
+    ///     viewModel.username.bind(to: usernameLabel, \.text, disposal: &disposal)
     /// }
     ///
     /// ```
     ///
     func bind<O>(to object: O, _ objectKeyPath: ReferenceWritableKeyPath<O, T?>, disposal: inout Disposal) {
-        self.observe { [weak self] (new, old) in
-            guard let strongSelf = self else { return }
-            object[keyPath: objectKeyPath] = strongSelf.wrappedValue
+        observe { [weak self] (new, old) in
+            guard let self = self else { return }
+            object[keyPath: objectKeyPath] = self.wrappedValue
         }.add(to: &disposal)
     }
     
@@ -77,14 +77,14 @@ public extension Observable {
     /// }
     ///
     /// class ViewController {
-    ///     self.viewModel.username.bind(to: self.usernameLabel, \.text, disposal: &self.disposal) { $0.uppercased() }
+    ///     viewModel.username.bind(to: usernameLabel, \.text, disposal: &disposal) { $0.uppercased() }
     /// }
     ///
     /// ```
     func bind<O: NSObject, R>(to object: O, _ objectKeyPath: ReferenceWritableKeyPath<O, R>, disposal: inout Disposal, transform: @escaping (T) -> R) {
-        self.observe { [weak self] (new, old) in
-            guard let strongSelf = self else { return }
-            let value = strongSelf.wrappedValue
+        observe { [weak self] (new, old) in
+            guard let self = self else { return }
+            let value = self.wrappedValue
             object[keyPath: objectKeyPath] = transform(value)
         }.add(to: &disposal)
     }
@@ -105,15 +105,15 @@ public extension Observable {
     /// }
     ///
     /// class ViewController {
-    ///     self.viewModel.username.bind(to: self.usernameLabel, \.text, disposal: &self.disposal) { $0.uppercased() }
+    ///     viewModel.username.bind(to: usernameLabel, \.text, disposal: &disposal) { $0.uppercased() }
     /// }
     ///
     /// ```
     ///
     func bind<O: NSObject, R>(to object: O, _ objectKeyPath: ReferenceWritableKeyPath<O, R?>, disposal: inout Disposal, transform: @escaping (T) -> R?) {
-        self.observe { [weak self] (new, old) in
-            guard let strongSelf = self else { return }
-            let value = strongSelf.wrappedValue
+        observe { [weak self] (new, old) in
+            guard let self = self else { return }
+            let value = self.wrappedValue
             object[keyPath: objectKeyPath] = transform(value)
         }.add(to: &disposal)
     }
