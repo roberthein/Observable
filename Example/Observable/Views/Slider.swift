@@ -4,9 +4,9 @@ import Observable
 
 class Slider: UISlider {
     
-    @MutableObservable private var positionValue:CGFloat = 0
+    @MutableObservable var positionValue: CGFloat = 0
     
-    var position:Observable<CGFloat> {
+    var position: Observable<CGFloat> {
         return _positionValue
     }
     
