@@ -3,7 +3,7 @@ import Foundation
 @available(*, deprecated, renamed: "Observable", message: "`Observable` was renamed to `MutableObservable` and `ImmutableObservable` was renamed to `Observable`. An `Observable` can only read and observe changes on the `wrappedValue`. If you want to change the `wrappedValue` please use a `MutableObservable`instead.")
 public typealias ImmutableObservable = Observable
 
-public class Observable<T> {
+open class Observable<T> {
     
     public typealias Observer = (T, T?) -> Void
     
@@ -92,7 +92,7 @@ public class Observable<T> {
 }
 
 @propertyWrapper
-public class MutableObservable<T>: Observable<T> {
+open class MutableObservable<T>: Observable<T> {
     
     override public var wrappedValue: T {
         get {
