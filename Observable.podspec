@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name = 'Observable'
-  s.version = '2.2.0'
+  s.version = '2.2.1'
   s.swift_versions = [5.0]
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.9'
+  s.ios.deployment_target = '16.0'
+  s.osx.deployment_target = '14.0'
   s.summary = 'The easiest way to observe values in Swift'
   s.description = <<-DESC
     Observable is the easiest way to observe values in Swift
